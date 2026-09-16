@@ -1,0 +1,277 @@
+:root {
+	--navy: #17324d;
+	--blue: #2f6690;
+	--teal: #3f8f8a;
+	--coral: #e07a5f;
+	--paper: #f7f5f0;
+	--white: #ffffff;
+	--ink: #263238;
+	--muted: #637381;
+	--line: #dbe3e6;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background: var(--paper);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+header {
+	padding: 3.5rem 1.5rem 2rem;
+	color: var(--white);
+	background: var(--navy);
+	text-align: center;
+}
+
+header h1 {
+	margin: 0;
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	letter-spacing: 0.03em;
+}
+
+header p {
+	margin: 0.4rem 0 1.8rem;
+	color: #d8e7ea;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.95rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+nav a {
+	padding: 0.45rem 0.9rem;
+	color: var(--white);
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	border-radius: 999px;
+	text-decoration: none;
+	transition: background-color 160ms ease, color 160ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+	color: var(--navy);
+	background: var(--white);
+}
+
+hr {
+	height: 0;
+	margin: 0;
+	border: 0;
+	border-top: 4px solid var(--coral);
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 3rem 1.5rem;
+}
+
+main > p,
+main > h2,
+main > ul,
+main > table {
+	grid-column: 1 / -1;
+}
+
+section,
+main > ul,
+main > table {
+	padding: 1.6rem;
+	background: var(--white);
+	border: 1px solid var(--line);
+	border-radius: 0.75rem;
+	box-shadow: 0 8px 24px rgba(23, 50, 77, 0.06);
+}
+
+h2,
+h3 {
+	color: var(--navy);
+	line-height: 1.2;
+}
+
+h2 {
+	margin-top: 0;
+	font-size: 1.65rem;
+}
+
+h3 {
+	margin-top: 2rem;
+	font-size: 1.15rem;
+}
+
+a {
+	color: var(--blue);
+}
+
+address {
+	font-style: normal;
+	line-height: 2.2;
+}
+
+ul {
+	padding-left: 1.5rem;
+}
+
+li::marker {
+	color: var(--coral);
+}
+
+form {
+	display: grid;
+	gap: 0.8rem;
+}
+
+label {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 0.75rem 0.85rem;
+	color: var(--ink);
+	font: inherit;
+	background: #fbfcfc;
+	border: 1px solid #b8c9cf;
+	border-radius: 0.4rem;
+}
+
+textarea {
+	resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+	outline: 3px solid rgba(63, 143, 138, 0.25);
+	border-color: var(--teal);
+}
+
+input[type="submit"] {
+	width: fit-content;
+	padding: 0.7rem 1.2rem;
+	color: var(--white);
+	background: var(--coral);
+	border: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible {
+	background: #c95f46;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+th,
+td {
+	padding: 0.85rem;
+	border-bottom: 1px solid var(--line);
+	text-align: left;
+}
+
+th {
+	color: var(--white);
+	background: var(--blue);
+	font-size: 0.85rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+tr:last-child td {
+	border-bottom: 0;
+}
+
+figure {
+	margin: 0;
+	overflow: hidden;
+	background: var(--white);
+	border: 1px solid var(--line);
+	border-radius: 0.55rem;
+}
+
+figure img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+figcaption {
+	padding: 0.6rem;
+	color: var(--navy);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+
+footer {
+	padding: 1.5rem;
+	color: #d8e7ea;
+	background: var(--navy);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.9rem;
+	text-align: center;
+}
+
+footer p {
+	margin: 0;
+}
+
+@media (max-width: 700px) {
+	main {
+	grid-template-columns: 1fr;
+	padding: 2rem 1rem;
+	}
+
+	main > p,
+	main > h2,
+	main > ul,
+	main > table {
+		grid-column: auto;
+	}
+
+	main > table {
+		display: block;
+		overflow-x: auto;
+	}
+
+	main > table td {
+		min-width: 180px;
+	}
+
+	section,
+	main > ul,
+	main > table {
+		padding: 1.15rem;
+	}
+}
